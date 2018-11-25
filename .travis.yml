@@ -1,0 +1,21 @@
+language: node_js
+
+node_js:
+  - "node"
+  - "lts/*"
+  - "8"
+
+script:
+  - npm run lint
+  - npm run build
+  - npm test
+
+deploy:
+  provider: npm
+  email: mike-n@narod.ru
+  api_key:
+    secure: bLkA+q5UCznOJ/EoiatEzy5JrLwUMwtheYMIiY8NVHuxfKXvrdJhwe/su0ijoABbfkIiNhFnAO0rKscHqVLZCPGwVmUUHZ2nKspn9oBntzhFVc4QLk91fkl+FF1V/YbsYBA+THmmWig+5I841HWBUpOod+uOmoQXAAGDIJlVL6VisVJIXJOc5S3O/AgTF5qlJKPvlEwTUZ+qexxUq4TNvJfke9FZIlOCBjdsy3kQDKgiTfM+cx9+DbB8iFNwPbULJLDUukzXhmcRH0w5caFHXkBlXYFVgkbRtIWWeoSBl8exHxwWGP0TDzVCjVIgAix0EKzRDIQBSFYxxBbG7mdH1N9rgi+cCCvH7skbBUkyGfjjOm+yIk8CYOivSjAVLLWJwubMCgrcmy+M6Uug9zq/A8ayUSglgaXPwaVSEJsMzb0jH3lXrVSHGx2AyuD8+YavFF+CdLeeaxrAXVToZa8d2TUu4jOJWL4/TmzNQdSD2guaaI02cxBZXvAZu7VvfOKCYdREVVrS+1+w+nJ3QvMzlfVSkUFxqz9FGkAR89XPLnzJg9DGNrtV59JBmtQCz8O4u0NNiF72E45ri3Mg2UQmZ8vX6j1q201xCDZlYRBdS5yVI/OPvOYsaShGjQpQnACnBcFpt989uLzWCEuZBVl11smnMFlrzxHb5CfCeie94pk=
+  on:
+    tags: true
+    repo: MOZGIII/hybridconfig
+  skip_cleanup: true

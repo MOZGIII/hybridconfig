@@ -1,0 +1,36 @@
+{
+  "name": "hybridconfig",
+  "version": "0.0.1",
+  "description": "Runtime web application configuration loader utilizing hybrid approach: using external JSON config fetching but allowing use of environment variables to overwrite values in development environment.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "test": "jest",
+    "tsc:check": "tsc --noEmit",
+    "prettier:check": "prettier --list-different **/*",
+    "prettier:fix": "prettier --write **/*",
+    "tslint:check": "tslint --project .",
+    "tslint:fix": "tslint --project . --fix",
+    "prepare": "npm run build",
+    "lint": "npm run tsc:check && npm run prettier:check && npm run tslint:check"
+  },
+  "files": [
+    "dist/",
+    "!*.test.js",
+    "!*.test.d.ts"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^23.3.9",
+    "@types/node": "^10.12.10",
+    "jest": "^23.6.0",
+    "prettier": "^1.15.2",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.16.0",
+    "typescript": "^3.1.6"
+  }
+}
