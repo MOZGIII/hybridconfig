@@ -1,6 +1,6 @@
 {
   "name": "hybridconfig",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Runtime web application configuration loader utilizing hybrid approach: using external JSON config fetching but allowing use of environment variables to overwrite values in development environment.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
