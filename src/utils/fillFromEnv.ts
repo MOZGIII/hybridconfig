@@ -12,7 +12,7 @@ const fillFromEnv = <
     const envKey = formatEnvKey(key);
     const value: string | undefined = process.env[envKey];
     if (value) {
-      config[key] = value;
+      (config as PlainConfig<TKey>)[key] = value;
     }
   });
 
