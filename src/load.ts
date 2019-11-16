@@ -8,29 +8,31 @@ export interface IOptions {
   envKeyPrefix: string;
 }
 
+type LoadFn = <TKeys extends string>(
+  options: IOptions
+) => Promise<PlainConfig<TKeys>>;
+
 // For production we just return remote config, we're not interested in using
 // *build-time* env variables, since we're solving the *runtime*
 // configuration problem.
-export const loadProduction = <TKeys extends string>({
-  remoteConfigPath
-}: IOptions): Promise<PlainConfig<TKeys>> =>
-  loadRemoteConfig<TKeys>(remoteConfigPath);
+export const loadProduction: LoadFn = ({ remoteConfigPath }) =>
+  loadRemoteConfig(remoteConfigPath);
 
 // For non-production environments we assume development mode of some kind,
 // so want we do is to load the remote config (that contains the defaults),
 // and apply some manual overrides.
-export const loadNonProduction = <TKeys extends string>({
+export const loadNonProduction: LoadFn = ({
   remoteConfigPath,
   envKeyPrefix
-}: IOptions): Promise<PlainConfig<TKeys>> => {
+}) => {
   const formatEnvKey = formatEnvKeyWithPrefix(envKeyPrefix);
 
-  return loadRemoteConfig<TKeys>(remoteConfigPath).then(cfg =>
-    mergeFromEnv<TKeys>(cfg, formatEnvKey)
+  return loadRemoteConfig(remoteConfigPath).then(cfg =>
+    mergeFromEnv(cfg, formatEnvKey)
   );
 };
 
-export const load =
+export const load: LoadFn =
   !process || process.env.NODE_ENV === "production"
     ? loadProduction
     : loadNonProduction;
