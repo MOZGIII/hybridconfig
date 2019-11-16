@@ -23,14 +23,14 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "@types/jest": "^23.3.14",
-    "@types/node": "^10.14.22",
-    "jest": "^23.6.0",
-    "prettier": "^1.18.2",
-    "rimraf": "^2.7.1",
-    "ts-jest": "^23.10.5",
-    "tslint": "^5.20.0",
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.1",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.0",
+    "ts-jest": "^24.1.0",
+    "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.6.4"
+    "typescript": "^3.7.2"
   }
 }
