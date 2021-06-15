@@ -10,18 +10,18 @@ describe("mergeFromEnv", () => {
 
   mockProcessEnv({
     MY_KEY: "custom",
-    OTHER_UNUSED_KEY: "other"
+    OTHER_UNUSED_KEY: "other",
   }).useForEach();
 
   it("overwrites the key", () => {
     const base: IMyConfig = {
-      my_key: "default"
+      my_key: "default",
     };
 
     const result: IMyConfig = mergeFromEnv(base as any, upperCaseFormatEnvKey);
 
     expect(result).toEqual({
-      my_key: "custom"
+      my_key: "custom",
     });
   });
 });

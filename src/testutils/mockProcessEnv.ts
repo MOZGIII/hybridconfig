@@ -31,7 +31,7 @@ const mockProcessEnv = (mockValue: ProcessEnv) => {
     useForAll: () => {
       beforeAll(activate);
       afterAll(deactivate);
-    }
+    },
   };
 };
 

@@ -3,7 +3,7 @@ import defExport, {
   load,
   loadNonProduction,
   loadProduction,
-  PlainConfig
+  PlainConfig,
 } from "./index";
 
 describe("Public interface", () => {

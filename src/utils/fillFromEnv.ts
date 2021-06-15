@@ -8,7 +8,7 @@ const fillFromEnv = <
   keys: TKey[],
   formatEnvKey: (configKey: TKey) => string
 ) =>
-  keys.forEach(key => {
+  keys.forEach((key) => {
     const envKey = formatEnvKey(key);
     const value: string | undefined = process.env[envKey];
     if (value) {

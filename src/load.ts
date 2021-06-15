@@ -23,11 +23,11 @@ export const loadProduction: LoadFn = ({ remoteConfigPath }) =>
 // and apply some manual overrides.
 export const loadNonProduction: LoadFn = ({
   remoteConfigPath,
-  envKeyPrefix
+  envKeyPrefix,
 }) => {
   const formatEnvKey = formatEnvKeyWithPrefix(envKeyPrefix);
 
-  return loadRemoteConfig(remoteConfigPath).then(cfg =>
+  return loadRemoteConfig(remoteConfigPath).then((cfg) =>
     mergeFromEnv(cfg, formatEnvKey)
   );
 };

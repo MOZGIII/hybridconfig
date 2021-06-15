@@ -7,7 +7,7 @@ describe("PlainConfig", () => {
     }
 
     const a: ITestType = {
-      myConfig: "test"
+      myConfig: "test",
     };
 
     const b: PlainConfig<keyof ITestType> = a;

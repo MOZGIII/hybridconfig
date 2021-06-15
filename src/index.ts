@@ -9,5 +9,5 @@ export {
   load as default,
   load,
   loadProduction,
-  loadNonProduction
+  loadNonProduction,
 } from "./load";
