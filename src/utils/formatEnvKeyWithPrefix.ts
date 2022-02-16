@@ -1,6 +1,7 @@
+import { constantCase } from "constant-case";
+
 const formatEnvKeyWithPrefix = (prefix: string) => {
-  const upPrefix = prefix.toUpperCase();
-  return (configKey: string) => upPrefix + configKey.toUpperCase();
+  return (configKey: string) => prefix + constantCase(configKey);
 };
 
 export default formatEnvKeyWithPrefix;
