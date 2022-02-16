@@ -32,7 +32,15 @@ export const loadNonProduction: LoadFn = ({
   );
 };
 
-const env = process?.env?.NODE_ENV;
+const detectEnv = () => {
+  try {
+    return process.env.NODE_ENV;
+  } catch {
+    return undefined;
+  }
+};
+
+const env = detectEnv();
 
 export const load: LoadFn =
   !env || env === "production" ? loadProduction : loadNonProduction;
